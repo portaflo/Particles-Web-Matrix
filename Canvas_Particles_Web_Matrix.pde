@@ -7,8 +7,8 @@ void setup() {
   frameRate(30);
   size(1000, 400);
   particles = new ArrayList<Particle>();
-  for(int i=0; i<=particleCount; i++){
-   particles.add(new Particle()); 
+  for (int i=0; i<particleCount; i++) {
+    particles.add(new Particle());
   }
 }
 
@@ -53,21 +53,20 @@ void distance(Particle p1, Particle p2) {
     stroke(255);
     strokeWeight((1-dist/minDist));
     line(p1.x, p1.y, p2.x, p2.y);
-    
+
     float ax = dx/2000;
-  float ay = dy/2000;
+    float ay = dy/2000;
 
-  p1.vx -= ax;
-  p1.vy -= ay;
+    p1.vx -= ax;
+    p1.vy -= ay;
 
-  p2.vx += ax;
-  p2.vy += ay;
+    p2.vx += ax;
+    p2.vy += ay;
   }
-  
 }
 
 class Particle {
-  
+
   float x;
   float y;
   int radius;
